@@ -120,7 +120,7 @@ public class Assignment1_Sieve {
         }
         
         //construct string to be written
-        s += (sum + " "+ amount + " "+ timeOutput + " ");
+        s += (timeOutput + " " + amount + " " + sum + " ");
         for(int i = top.length - 1; i >= 0; i--) {
         	s += top[i] + " ";
         }
