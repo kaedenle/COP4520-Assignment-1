@@ -7,4 +7,4 @@ In the directory Assignment1_Sieve.java is in, run...
 This will produce a file named primes.txt
 
 ## OUTPUT
-"<execution time in ms> <number of primes found> <sum of all primes> <last ten primes>"
+(execution time in ms) (number of primes found) (sum of all primes) (last ten primes)
