@@ -77,7 +77,7 @@ public class Assignment1_Sieve {
 	public static void main(String[] args) {
 		long startTime = System.nanoTime();
 		
-		final int THREADS = (args.length > 1) ? Integer.valueOf(args[0]) : 8;
+		final int THREADS = (args.length > 0) ? Integer.valueOf(args[0]) : 8;
 		//(int)Math.pow(10,  8)
 		Trackers t = new Trackers((int)Math.pow(10,  8), THREADS);
 		Thread[] tList = new Thread[THREADS];
