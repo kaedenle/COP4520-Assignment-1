@@ -78,8 +78,9 @@ public class Assignment1_Sieve {
 		long startTime = System.nanoTime();
 		
 		final int THREADS = (args.length > 0) ? Integer.valueOf(args[0]) : 8;
+		final int VALUE = (args.length > 1) ? Integer.valueOf(args[1]) : (int)Math.pow(10,  8);
 		//(int)Math.pow(10,  8)
-		Trackers t = new Trackers((int)Math.pow(10,  8), THREADS);
+		Trackers t = new Trackers(VALUE, THREADS);
 		Thread[] tList = new Thread[THREADS];
 		
 		for(int i = 0; i < THREADS; i++) {
@@ -120,7 +121,7 @@ public class Assignment1_Sieve {
         }
         
         //construct string to be written
-        s += (timeOutput + " " + amount + " " + sum + " ");
+        s += (timeOutput + " | " + amount + " | " + sum + " | ");
         for(int i = top.length - 1; i >= 0; i--) {
         	s += top[i] + " ";
         }
