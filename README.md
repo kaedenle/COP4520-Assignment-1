@@ -3,7 +3,8 @@
 In the directory Assignment1_Sieve.java is in, run...
 - javac Assignment1_Sieve.java
   - This will create 3 new classes in the directory
-- java Assignment1_Sieve [THREAD_NUM, default=8]
+- java Assignment1_Sieve [THREAD_NUM, default=8] [MAX, default = 10<sup>8</sup>]
+  - The last two args in [] are optional, however you either include both or none
 
 This will produce a file named primes.txt
 
@@ -39,4 +40,15 @@ This approach uses load balancing to evenly distribute the work among each threa
 - Load balancing works for this approach as each thread is only doing a constant time operation each number they're considering (in finding all the multiples of a given number).
 
 ## EXPERIEMENTAL EVALUATION
-10<sup>6</sup>
+INPUT: OUTPUT
+- 10<sup>8</sup>: 574.2109 ms 5761455 279209790387276 99999787 99999821 99999827 99999839 99999847 99999931 99999941 99999959 99999971 99999989 
+- 10<sup>6</sup>: 36.3646 ms 78498 37550402023 999863 999883 999907 999917 999931 999953 999959 999961 999979 999983
+- 10<sup>7</sup>: 47.4513 ms 664579 3203324994356 9999889 9999901 9999907 9999929 9999931 9999937 9999943 9999971 9999973 9999991  
+- 999863: 34.0426 ms 78489 37541402550 999683 999721 999727 999749 999763 999769 999773 999809 999853 999863 
+  - End range with large prime number
+- 1: 1.358 ms 0 0 0 0 0 0 0 0 0 0 0 0 
+  - The smallest range
+- 2: 1.596 ms 1 2 0 0 0 0 0 0 0 0 0 2
+  - Smallest range with at least 1 prime
+- 50176014: 222.0149 ms 3011033 73115372139256 50175863 50175871 50175911 50175919 50175953 50175967 50175971 50175973 50175989 50175997 
+  - A random number picked out of a hat
