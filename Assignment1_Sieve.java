@@ -26,23 +26,25 @@ class Primes implements Runnable{
 				cur++;
 				continue;
 			}
+			//get the next number to be considered
 			int next = cur * cur;
+			//calculate the amount of multiples to be considered by each thread
 			int delta = (int) Math.ceil((Math.ceil(track.getMax() + cur - next)/cur)/track.NUM_THREADS);
+			//calculate the starting number and ending number. Both are multiples of the current multiple
 			counter = next + (id * delta * cur);
 			end = next + ((id + 1) * delta * cur) - 1;
 			
 			if(end < counter) {
 				return;
 			}
-			
-			//System.out.println(counter + " " + end + " " + cur + " " + Thread.currentThread().getName());
+
 			while(counter <= end && counter <= track.getMax()) {
 				if(0 > counter) {
 					return;
 				}
+				//set the multiple of the prime to false
 				track.array[counter - 1] = false;
-
-				//System.out.println(counter + " Current Multiplier: " + cur);
+				//increment by the prime
 				counter += cur;
 			}
 			cur++;
@@ -70,7 +72,6 @@ class Trackers{
 	public int getMax() {
 		return MAX_VALUE;
 	}
-
 }
 
 public class Assignment1_Sieve {
